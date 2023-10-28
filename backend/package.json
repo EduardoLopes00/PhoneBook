@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
+    "test:specific": "jest --testPathPattern=$SOURCE --collectCoverage=false --silent=false",
     "start": "tsc-watch --onSuccess \"node ./dist/server.js",
-    "migrate": "prisma migrate dev --schema ./prisma/schema.prisma"
+    "migrate": "prisma migrate dev --schema ./prisma/schema.prisma",
+    "lint": "eslint \"src/**\" --fix"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +23,7 @@
   "devDependencies": {
     "@types/cors": "^2.8.15",
     "@types/express": "^4.17.20",
+    "@types/jest": "^29.5.6",
     "@typescript-eslint/eslint-plugin": "^6.9.0",
     "@typescript-eslint/parser": "^6.9.0",
     "eslint": "^8.0.1",
@@ -29,7 +32,9 @@
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
     "eslint-plugin-promise": "^6.0.0",
+    "jest": "^29.7.0",
     "prisma": "^5.5.2",
+    "ts-jest": "^29.1.1",
     "ts-node-dev": "^2.0.0",
     "tsc-watch": "^6.0.4",
     "typescript": "*"
