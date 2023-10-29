@@ -1,17 +1,23 @@
 {
+  "ts-node": {
+    "require": ["tsconfig-paths/register"]
+  },
   "compilerOptions": {
-    "target": "es2020",                                  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
-    "module": "commonjs",                                /* Specify what module code is generated. */
-    "outDir": "./dist",                                  /* Specify the root folder within your source files. */    
-    
-    "esModuleInterop": true,                             /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */    
-    "forceConsistentCasingInFileNames": true,            /* Ensure that casing is correct in imports. */    
-    "strict": true,                                      /* Enable all strict type-checking options. */    
-    "strictNullChecks": false,                           /* When type checking, take into account 'null' and 'undefined'. */
-    "skipLibCheck": true,                                /* Skip type checking all .d.ts files. */
-    "baseUrl": "./",                                    /* Specify the base directory to resolve non-relative module names. */
+    "target": "es2020",                                  
+    "module": "commonjs",                                
+    "outDir": "./dist",                                  
+    "rootDir": "./",
+    "esModuleInterop": true,                             
+    "forceConsistentCasingInFileNames": true,            
+    "strict": true,                                      
+    "strictNullChecks": false,                           
+    "skipLibCheck": true,       
+    "resolveJsonModule": true,        
+    "sourceMap": true,                 
+    "baseUrl": ".",                                       
     "paths": {
       "@/*": ["*"]
-    },                                                   /* Specify a set of entries that re-map imports to additional lookup locations. */
-  }
+    },
+  },
+  "include": ["src/**/*"]
 }
