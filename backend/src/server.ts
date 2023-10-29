@@ -1,7 +1,7 @@
-import { app } from "./app";
+import { app } from './app'
 
-app.get('/get', (req, res) => {
-    return res.json('Hello world!')
+const port = 3333
+
+app.listen({ port }, () => {
+  console.log(`Server is running at port ${port}!`)
 })
-
-app.listen({ port: 3333 }, () => { console.log('Server is running!') })
