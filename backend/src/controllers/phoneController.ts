@@ -22,8 +22,6 @@ export function getPhones(req: Request, res: Response) {
 }
 
 export function getPhoneByIdRequest(req: Request, res: Response) {
-  console.log('REQ.PARAMS: ', req.params)
-
   try {
     getPhoneById(req.params.id as UUID).then((data) => {
       return res.status(200).json({
