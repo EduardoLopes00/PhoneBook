@@ -13,19 +13,10 @@ const data: Phone[] = Array.from({ length: 30 }).map(() => {
   }
 })
 
-async function main() {
+export async function main() {
   data.forEach(async (value) => {
-    console.log('value: ', value.phone)
     await prisma.phone.create({
       data: { name: value.name, lastName: value.lastName, phone: value.phone },
     })
   })
 }
-
-main()
-  .catch((e) => {
-    throw e
-  })
-  .finally(async () => {
-    await prisma.$disconnect()
-  })
