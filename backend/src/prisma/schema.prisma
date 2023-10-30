@@ -8,9 +8,9 @@ datasource db {
 }
 
 model phone {
-  id        String   @id @default(uuid())
-  name      String
-  lastName  String
-  phone     String
-  createdAt DateTime @default(now())
+  id          String   @id @default(uuid())
+  name        String
+  lastName    String
+  phoneNumber String
+  createdAt   DateTime @default(now())
 }
