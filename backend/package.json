@@ -7,7 +7,8 @@
     "test": "jest",
     "test:specific": "jest --testPathPattern=$SOURCE --collectCoverage=false --silent=false",
     "start": "nodemon src/server.ts",
-    "migrate": "prisma migrate dev --name $NAME",
+    "migrate": "prisma migrate dev --schema ./src/prisma/schema.prisma --name $NAME",
+    "studio": "prisma studio --schema ./src/prisma/schema.prisma",
     "lint": "eslint \"src/**\" --fix"
   },
   "keywords": [],
@@ -16,6 +17,7 @@
   "dependencies": {
     "@prisma/client": "^5.5.2",
     "@types/node": "^20.8.9",
+    "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
