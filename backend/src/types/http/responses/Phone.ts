@@ -1,8 +1,3 @@
-import { UUID } from 'crypto'
+import { Phone } from '../../entities/phone'
 
-export interface PhoneResponseBody {
-  id: UUID
-  name: string
-  lastName: string
-  phone: number
-}
+export interface PhoneResponseBody extends Phone {}

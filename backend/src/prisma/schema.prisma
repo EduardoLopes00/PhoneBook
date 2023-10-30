@@ -11,5 +11,6 @@ model phone {
   id        String   @id @default(uuid())
   name      String
   lastName  String
+  phone     String
   createdAt DateTime @default(now())
 }

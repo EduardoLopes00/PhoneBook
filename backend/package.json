@@ -7,7 +7,7 @@
     "test": "jest",
     "test:specific": "jest --testPathPattern=$SOURCE --collectCoverage=false --silent=false",
     "start": "nodemon src/server.ts",
-    "migrate": "prisma migrate dev --schema ./prisma/schema.prisma",
+    "migrate": "prisma migrate dev --name $NAME",
     "lint": "eslint \"src/**\" --fix"
   },
   "keywords": [],
@@ -23,6 +23,7 @@
     "morgan": "^1.10.0"
   },
   "devDependencies": {
+    "@faker-js/faker": "^8.2.0",
     "@types/cors": "^2.8.15",
     "@types/express": "^4.17.20",
     "@types/jest": "^29.5.6",
