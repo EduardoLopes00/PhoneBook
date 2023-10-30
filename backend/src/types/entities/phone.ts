@@ -5,5 +5,5 @@ export interface Phone {
   createdAt?: Date
   name: string
   lastName: string
-  phone: string
+  phoneNumber: string
 }

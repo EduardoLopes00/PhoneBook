@@ -1,14 +1,16 @@
 import express from 'express'
 import {
   createPhone,
-  deletePhone,
+  deletePhoneRequest,
+  getPhoneByIdRequest,
   getPhones,
-  updatePhone,
+  updatePhoneRequest,
 } from '../controllers/phoneController'
 
 export const phoneRouter = express.Router()
 
 phoneRouter.get('/', getPhones)
+phoneRouter.get('/:id', getPhoneByIdRequest)
 phoneRouter.post('/', createPhone)
-phoneRouter.put('/', updatePhone)
-phoneRouter.delete('/:id', deletePhone)
+phoneRouter.put('/:id', updatePhoneRequest)
+phoneRouter.delete('/:id', deletePhoneRequest)

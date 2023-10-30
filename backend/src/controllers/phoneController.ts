@@ -1,38 +1,76 @@
 import { Request, Response } from 'express'
-import { createNewPhone, getAllPhones } from '../services/phoneService'
-import { PhoneRequestBody } from '../types/http/requests'
+import {
+  createNewPhone,
+  deletePhone,
+  getAllPhones,
+  getPhoneById,
+  updatePhone,
+} from '../services/phoneService'
+import { PhoneRequestBody } from '../types/http/DTO'
 import { HttpVerbs } from '../types/http/structure'
 import { HttpVerbsAndAction } from '../utils/consts/httpVerbs'
+import { UUID } from 'crypto'
 
 export function getPhones(req: Request, res: Response) {
-  getAllPhones()
-    .then((allPhones) => {
+  try {
+    getAllPhones().then((allPhones) => {
       return res.status(200).json(allPhones)
     })
-    .catch((error: Error) => defaultCatchTreatment('GET', error, res))
+  } catch (error) {
+    defaultCatchTreatment('GET', error as Error, res)
+  }
+}
+
+export function getPhoneByIdRequest(req: Request, res: Response) {
+  console.log('REQ.PARAMS: ', req.params)
+
+  try {
+    getPhoneById(req.params.id as UUID).then((data) => {
+      return res.status(200).json({
+        data,
+      })
+    })
+  } catch (error) {
+    defaultCatchTreatment('GET', error as Error, res)
+  }
 }
 
 export function createPhone(req: Request<PhoneRequestBody>, res: Response) {
-  createNewPhone(req.body)
-    .then((newPhone) => {
+  try {
+    createNewPhone(req.body).then((newPhone) => {
       return res.status(201).json({
         message: 'A new register has been created successfully!',
         data: newPhone,
       })
     })
-    .catch((error: Error) => defaultCatchTreatment('INSERT', error, res))
+  } catch (error) {
+    defaultCatchTreatment('INSERT', error as Error, res)
+  }
 }
 
-export function updatePhone(req: Request, res: Response) {
-  // const allPhones = getAllPhones()
-
-  return res.status(200).json({ message: 'ola' })
+export function updatePhoneRequest(req: Request, res: Response) {
+  try {
+    updatePhone(req.body, req.params.id as UUID).then((updatedPhone) => {
+      return res.status(201).json({
+        message: 'The phone has been updated successfully!',
+        data: updatedPhone,
+      })
+    })
+  } catch (error) {
+    defaultCatchTreatment('PUT', error as Error, res)
+  }
 }
 
-export function deletePhone(req: Request, res: Response) {
-  // const allPhones = getAllPhones()
-
-  return res.status(200).json({ message: 'ola' })
+export function deletePhoneRequest(req: Request, res: Response) {
+  try {
+    deletePhone(req.params.id as UUID).then(() => {
+      return res.status(200).json({
+        message: 'The phone has been deleted successfully!',
+      })
+    })
+  } catch (error) {
+    defaultCatchTreatment('DELETE', error as Error, res)
+  }
 }
 
 function defaultCatchTreatment(

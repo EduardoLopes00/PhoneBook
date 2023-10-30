@@ -5,18 +5,20 @@ import { removeHiphen } from '../utils/functions/removeHiphen'
 
 export const prisma = new PrismaClient()
 
-const data: Phone[] = Array.from({ length: 30 }).map(() => {
+const mockPhones: Phone[] = Array.from({ length: 30 }).map(() => {
   return {
     name: faker.person.firstName(),
     lastName: faker.person.firstName(),
-    phone: removeHiphen(faker.phone.number()),
+    phoneNumber: removeHiphen(faker.phone.number()),
   }
 })
 
 export async function main() {
-  data.forEach(async (value) => {
+  mockPhones.forEach(async (mockPhone) => {
+    const { name, lastName, phoneNumber } = mockPhone
+
     await prisma.phone.create({
-      data: { name: value.name, lastName: value.lastName, phone: value.phone },
+      data: { name, lastName, phoneNumber },
     })
   })
 }
