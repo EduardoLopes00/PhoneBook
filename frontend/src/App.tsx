@@ -1,7 +1,12 @@
-import "./app.scss";
+import { Container } from "./app";
+import { Main } from "./page/main";
 
 function App() {
-  return <body>Olá mundo!</body>;
+  return (
+    <Container>
+      <Main />
+    </Container>
+  );
 }
 
 export default App;
