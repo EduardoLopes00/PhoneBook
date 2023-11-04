@@ -26,8 +26,14 @@ export const IconAndTitle = styled.div`
   justify-content: center;
   align-items: center;
   gap: 20px;
+
+  margin-bottom: 40px;
 `;
 
 export const ContactLabelAndButtonBox = styled(FlexDiv)`
+  p {
+    font-size: 20px;
+  }
+
   justify-content: space-between;
 `;
