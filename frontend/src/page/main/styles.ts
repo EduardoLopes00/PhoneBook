@@ -7,7 +7,7 @@ const FlexDiv = styled.div`
 `;
 
 export const Container = styled.div`
-  width: 600px;
+  width: 500px;
   height: 600px;
 
   padding: 20px;

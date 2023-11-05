@@ -1,9 +1,8 @@
 import { StyledButton } from "./styles";
 
-interface AddContactButtonProps {
-  click: () => void;
-}
+interface AddContactButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
 
-export function AddContactButton({ click }: AddContactButtonProps) {
-  return <StyledButton onClick={click}>+ Add Contact</StyledButton>;
+export function AddContactButton({ ...props }: AddContactButtonProps) {
+  return <StyledButton {...props}>+ Add Contact</StyledButton>;
 }

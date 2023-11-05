@@ -1,4 +1,5 @@
-export const normalBlue = "#066197";
-export const lightBlue = "#0871B3";
-export const blueWhite = "#EFF0F4";
+export const normalBlue = "#005693";
+export const lightBlue = "#4D89B3";
+export const ultraLightBlue = "#B3CCDF";
+export const blueWhite = "#E0EBF2";
 export const mainOrange = "#FE7C02";
