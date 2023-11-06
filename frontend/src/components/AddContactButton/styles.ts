@@ -13,9 +13,4 @@ export const StyledButton = styled.button`
   color: black;
 
   cursor: pointer;
-
-  transition: opacity 0.25s;
-  &:hover {
-    opacity: 0.93;
-  }
 `;

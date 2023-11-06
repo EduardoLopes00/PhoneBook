@@ -10,8 +10,22 @@ body {
   font-family: "Roboto", "Helvetica Neue", sans-serif;
 }
 
+button {
+  cursor: pointer;
+  border: none;
+
+  transition: opacity 0.15s;
+  &:hover {
+    opacity: 0.93;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
 }

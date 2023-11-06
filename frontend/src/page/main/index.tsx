@@ -1,7 +1,9 @@
+import { List } from "@/components/List";
 import { AddContactButton } from "../../components/AddContactButton";
 import { TextInput } from "../../components/design/TextInput";
 
 import { ContactLabelAndButtonBox, Container, IconAndTitle } from "./styles";
+import { phonesMock } from "@/utils/phonesMocks";
 
 export function Main() {
   function handleAddContactClick(value: string) {
@@ -25,6 +27,8 @@ export function Main() {
         icon="search"
         onChange={(e) => handleAddContactClick(e.target.value)}
       />
+
+      <List phones={phonesMock} />
     </Container>
   );
 }

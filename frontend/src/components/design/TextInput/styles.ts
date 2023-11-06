@@ -8,7 +8,7 @@ export const Container = styled.div`
     width: 100%;
     height: 22px;
     border: none;
-    padding: 0 6px 0 25px;
+    padding: 0 6px 0 20px;
     border-radius: 3px;
 
     &:focus {
@@ -20,8 +20,8 @@ export const Container = styled.div`
   span {
     color: ${normalBlue};
     position: absolute;
-    font-size: 20px;
-    top: 1px;
-    left: 3px;
+    font-size: 17px;
+    top: 2.5px;
+    left: 2.5px;
   }
 `;
