@@ -25,9 +25,13 @@ export const IconAndTitle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
 
   margin-bottom: 40px;
+
+  span {
+    font-size: 35px;
+  }
 `;
 
 export const ContactLabelAndButtonBox = styled(FlexDiv)`

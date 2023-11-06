@@ -2,7 +2,6 @@ import { AddContactButton } from "../../components/AddContactButton";
 import { TextInput } from "../../components/design/TextInput";
 
 import { ContactLabelAndButtonBox, Container, IconAndTitle } from "./styles";
-import PermContactCalendarIcon from "@mui/icons-material/PermContactCalendar";
 
 export function Main() {
   function handleAddContactClick(value: string) {
@@ -12,7 +11,7 @@ export function Main() {
   return (
     <Container>
       <IconAndTitle>
-        <PermContactCalendarIcon fontSize="large" />
+        <span className="material-symbols-outlined">perm_contact_calendar</span>
         <h1>Phone Book App</h1>
       </IconAndTitle>
 
@@ -23,6 +22,7 @@ export function Main() {
 
       <TextInput
         placeholder="Search for contact by last name..."
+        icon="search"
         onChange={(e) => handleAddContactClick(e.target.value)}
       />
     </Container>
