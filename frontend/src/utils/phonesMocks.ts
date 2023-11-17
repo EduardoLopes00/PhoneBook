@@ -37,4 +37,16 @@ export const phonesMock: Phone[] = [
     lastName: "Lewis",
     phoneNumber: "(279) 8587888 x117",
   },
+  {
+    id: "a1e743c3-8272-40be-8eb4-7ff4f12810d2",
+    name: "Mittie",
+    lastName: "Lewis",
+    phoneNumber: "(279) 8587888 x117",
+  },
+  {
+    id: "a1e743c3-8272-40be-8eb4-7ff4f12810d2",
+    name: "Mittie",
+    lastName: "Lewis",
+    phoneNumber: "(279) 8587888 x117",
+  },
 ];

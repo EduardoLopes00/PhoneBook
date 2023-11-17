@@ -1,11 +1,13 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  flex-grow: auto;
+  flex-direction: column;
   flex-shrink: 0;
 
-  overflow-y: visible;
-  margin-top: 10px;
+  max-height: 100%;
+
+  overflow-y: auto;
+
   border-radius: 3px;
   flex: 0 1 auto;
   background-color: white;

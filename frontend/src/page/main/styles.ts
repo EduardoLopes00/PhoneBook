@@ -15,6 +15,9 @@ export const Container = styled.div`
   color: ${blueWhite};
   border-radius: 12px;
 
+  display: flex;
+  flex-direction: column;
+
   align-self: center;
   margin: 0 auto;
 

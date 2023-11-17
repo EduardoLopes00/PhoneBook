@@ -4,6 +4,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   color: black;
 
+  flex: 1;
   padding: 8px 14px;
 
   width: 100%;
